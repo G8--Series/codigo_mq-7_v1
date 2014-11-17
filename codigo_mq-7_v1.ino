@@ -26,6 +26,7 @@ void loop() {
     Serial.println(val);
     delay(1000);
     EEPROM.write(cont2,val); //incluir librerias EEPROM
+    cont2 ++;
   }
   
 }
