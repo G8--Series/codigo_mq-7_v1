@@ -3,7 +3,11 @@ const int triggerPin = 7;
 const int sensorPin = 5;
 int val = 0;
 int cont = 0;
-int cont2 = 0;
+int avmonoxido;
+int monr;
+int real;
+long rt;
+long media;
 
 void setup() {
   pinMode(triggerPin, OUTPUT); 
@@ -19,14 +23,24 @@ void loop() {
   //analogWrite(triggerPin, 67);// triger ping y volataje 67 = 1.4v
   val = analogRead( sensorPin );  
   
-  for ( cont = 0; cont < 10; cont++ )
+  if (cont < 10)//for ( cont = 0; cont < 1; cont++ )
   {
     
-    Serial.print("Cantidad de monoxido: ");
-    Serial.println(val);
-    delay(1000);
-    EEPROM.write(cont2,val); //incluir librerias EEPROM
-    cont2 ++;
-  }
+    //Serial.print("Cantidad de monoxido: ");
+    //Serial.println("Cargando");
+    //Serial.println(val);
+    delay(10);
+    real +=(val);    
+    cont++;
+    }
+  else{
+  Serial.println("Cantidad de monoxido: ");
+  media = real/cont;
+  Serial.println(media);
+  media=0;
+  val=0;
+  real=0;
+  cont=0;
+  }   
   
 }
