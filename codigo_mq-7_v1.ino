@@ -1,6 +1,6 @@
 // to the pins used:
-const int triggerPin = 7;
-const int sensorPin = 5;
+//const int triggerPin = 7;
+const int sensorPin = 8;
 int val = 0;
 int cont = 0;
 int cont2 = 0;
